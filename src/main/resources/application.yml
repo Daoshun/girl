@@ -1,0 +1,23 @@
+spring:
+  jpa:
+    database: oracle
+    hibernate:
+      ddl-auto: update
+#      create 启动时删数据库中的表，然后创建，退出时不删除数据表
+#      create-drop 启动时删数据库中的表，然后创建，退出时删除数据表 如果表不存在报错
+#      update 如果启动时表格式不一致则更新表，原有数据保留
+#      validate 项目启动表结构进行校验 如果不一致则报错
+#      naming:
+#        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+#        implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyComponentPathImpl
+    show-sql: true
+  datasource:
+    url: jdbc:oracle:thin:@10.22.210.22:1521/daoshun
+    password: daoshun
+    username: scott
+#    url: jdbc:oracle:thin:@10.22.210.23:1521/ds
+#    password: daoshun
+#    username: system
+    driver-class-name: oracle.jdbc.driver.OracleDriver
+  profiles:
+    active: dev
